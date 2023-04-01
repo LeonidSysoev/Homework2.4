@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        String login = "Leokjljkljl12212!!!!";
+        String login = "Leokjljkljl1221211";
         System.out.println("login.length() = " + login.length());
-        String password = "wwwwwwwww";
+        String password = "wwwwwwwww!";
         String confirmPassword = "wwwwwwwww";
 
         if (checkRegistration(login, password, confirmPassword)) {
@@ -17,7 +17,12 @@ public class Main {
             checkLogin(login);
             checkPassword(password);
             checkConfirm(password, confirmPassword);
-        } catch (WrongLoginException | WrongPasswordException e) {
+        } catch (WrongLoginException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+            return false;
+        } catch (WrongPasswordException e) {
+            e.printStackTrace();
             System.out.println(e.getMessage());
             return false;
         } finally {
